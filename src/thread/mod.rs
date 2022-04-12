@@ -84,7 +84,7 @@ pub unsafe fn futex(
             transmute::<FutexOperation, Operation>(op),
             flags,
             val,
-            utime as usize as u32,
+            utime.addr() as u32,
             uaddr2 as *const AtomicU32,
             val3,
         ),
